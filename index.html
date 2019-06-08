@@ -18,12 +18,16 @@
     <p>Your Guesses So Far: <span id="displayYourGuessesSoFar"> 0 </span></p>
     <!-- span: inline element useful for  selecting text-->
     
+
     <div id="game"></div>
+
 
     <script type="text/javascript">
 
+
     // Creates an array that lists out all of the options (A-Z).
     var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
 
     // Create the variables I need.
     var wins = 0;
@@ -35,11 +39,14 @@
     // This function is run whenever the user presses a key.
     document.onkeyup = function(event) {
 
+
     // Determines which key was pressed.
     var userGuess = event.key;
 
+
     // Randomly chooses a choice from the options array. This is the Computer's guess.
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
 
     // .includes: It checks if the array includes the value passed to the method.
     // When computer's guess is equal to my guess, I Win.
@@ -56,6 +63,7 @@
             guessesLeft = 10;
         } 
 
+
         // Otherwise, the numbers of guesses I can make will decrease.
         // And when it hits zero, I lose, and the game resets.
         // And Guesses Left will reset to 10.
@@ -64,6 +72,9 @@
             guessesLeft--;
             yourGuessesSoFar.push(userGuess);
             document.getElementById("displayYourGuessesSoFar").innerHTML = yourGuessesSoFar.join(", ");
+            // array.join(separator): it joins the elements of an araay into a string.
+            // yourGuessesSoFar(array) + .join + ", " (whatever separator I want to put in.)
+
 
             document.getElementById("displayGuesses").innerHTML = guessesLeft;
             document.getElementById("displayLosses").innerHTML = losses;
