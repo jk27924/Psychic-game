@@ -41,6 +41,16 @@
     // Randomly chooses a choice from the options array. This is the Computer's guess.
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
+    // .includes: It checks if the array includes the value passed to the method.
+    if (computerChoices.includes(userGuess)) {
+        
+        document.getElementById("displayWins").innerHTML = wins;
+
+        if (computerGuess === userGuess) {
+            wins++;
+            yourGuessesSoFar = [];
+            guessesLeft = 10;
+        } 
 
     </script>
 
