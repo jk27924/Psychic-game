@@ -55,7 +55,7 @@
             yourGuessesSoFar = [];
             guessesLeft = 10;
         } 
-        
+
         // Otherwise, the numbers of guesses I can make will decrease.
         // And when it hits zero, I lose, and the game resets.
         // And Guesses Left will reset to 10.
@@ -65,6 +65,12 @@
             yourGuessesSoFar.push(userGuess);
             document.getElementById("displayYourGuessesSoFar").innerHTML = yourGuessesSoFar;
 
+            document.getElementById("displayGuesses").innerHTML = guessesLeft;
+            document.getElementById("displayLosses").innerHTML = losses;
+        }    
+    }   
+    }
+     
     </script>
 
 </body>
