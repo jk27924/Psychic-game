@@ -42,8 +42,12 @@
     var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
     // .includes: It checks if the array includes the value passed to the method.
+    // When computer's guess is equal to my guess, I Win.
+    // And the game resets.
+    // And Guesses Left will reset to 10.
+    // And Your Guesses So Far will reset to Empty.
     if (computerChoices.includes(userGuess)) {
-        
+
         document.getElementById("displayWins").innerHTML = wins;
 
         if (computerGuess === userGuess) {
