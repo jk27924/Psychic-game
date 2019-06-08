@@ -63,7 +63,7 @@
         else {
             guessesLeft--;
             yourGuessesSoFar.push(userGuess);
-            document.getElementById("displayYourGuessesSoFar").innerHTML = yourGuessesSoFar;
+            document.getElementById("displayYourGuessesSoFar").innerHTML = yourGuessesSoFar.join(", ");
 
             document.getElementById("displayGuesses").innerHTML = guessesLeft;
             document.getElementById("displayLosses").innerHTML = losses;
