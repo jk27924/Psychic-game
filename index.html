@@ -67,10 +67,19 @@
 
             document.getElementById("displayGuesses").innerHTML = guessesLeft;
             document.getElementById("displayLosses").innerHTML = losses;
+
+            if (guessesLeft === 0) {
+                losses++;
+
+                computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+                guessesLeft = 10;
+                yourGuessesSoFar = [];
+            }
         }    
     }   
     }
-     
+
     </script>
 
 </body>
