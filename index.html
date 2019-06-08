@@ -56,6 +56,11 @@
             guessesLeft = 10;
         } 
 
+        else {
+            guessesLeft--;
+            yourGuessesSoFar.push(userGuess);
+            document.getElementById("displayYourGuessesSoFar").innerHTML = yourGuessesSoFar;
+
     </script>
 
 </body>
