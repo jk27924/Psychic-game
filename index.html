@@ -24,9 +24,15 @@
 
     <script type="text/javascript">
 
-
     // Creates an array that lists out all of the options (A-Z).
     var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+    // Randomly chooses a choice from the options array. This is the Computer's guess.
+    // Return statement returns the value from the function. Keep returning randomly chosen letter each time.
+    var computerGuess = setComputerGuess();
+    function setComputerGuess (){
+        return computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    }
 
 
     // Create the variables I need.
@@ -44,10 +50,6 @@
     var userGuess = event.key;
 
 
-    // Randomly chooses a choice from the options array. This is the Computer's guess.
-    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
-
     // .includes: It checks if the array includes the value passed to the method.
     // When computer's guess is equal to my guess, I Win.
     // And the game resets.
@@ -55,20 +57,20 @@
     // And Your Guesses So Far will reset to Empty.
     if (computerChoices.includes(userGuess)) {
 
-        document.getElementById("displayWins").innerHTML = wins;
-
         if (computerGuess === userGuess) {
             wins++;
             yourGuessesSoFar = [];
             guessesLeft = 10;
-        } 
+         
+            computerGuess = setComputerGuess();
 
+            document.getElementById("displayWins").innerHTML = wins;
 
         // Otherwise, the numbers of guesses I can make will decrease.
         // And when it hits zero, I lose, and the game resets.
         // And Guesses Left will reset to 10.
         // And Your Guesses So Far will reset to Empty.
-        else {
+        } else {
             guessesLeft--;
             yourGuessesSoFar.push(userGuess);
             document.getElementById("displayYourGuessesSoFar").innerHTML = yourGuessesSoFar.join(", ");
@@ -82,7 +84,7 @@
             if (guessesLeft === 0) {
                 losses++;
 
-                computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+                computerGuess = setComputerGuess();
 
                 guessesLeft = 10;
                 yourGuessesSoFar = [];
